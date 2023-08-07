@@ -1,0 +1,32 @@
+input-path: ./data
+pipeline:
+  - name: input1
+    type: input
+    file-format: csv
+    no-header: true
+    headers:
+      - name: code
+        index: 0
+        data-type: string
+        data-format: 
+      - name: name
+        index: 1
+        data-type: string
+  - name: input2
+    type: input
+    file-format: csv
+    no-header: true
+    headers:
+      - name: code
+        index: 0
+        data-type: string
+        data-format: 
+      - name: name
+        index: 1
+        data-type: string
+  - name: output1
+    type: output
+    file-format: json
+    template: | 
+      {{range .input1}}
+    
